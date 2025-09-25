@@ -2,7 +2,11 @@ import { Page } from "@playwright/test";
 
 export class ListRoomPage {
   readonly page: Page;
+<<<<<<< HEAD
   readonly firstListing = '.ant-card-body >> nth=0';
+=======
+  readonly firstListing = ".ant-card-body >> nth=0";
+>>>>>>> main
   readonly heartButton = 'button:has(svg path[d^="m16"])';
   readonly heartActive = 'button:has(svg[fill="red"])';
 
@@ -21,4 +25,8 @@ export class ListRoomPage {
   async isFavorited() {
     return this.page.isVisible(this.heartActive);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
