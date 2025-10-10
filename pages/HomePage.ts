@@ -8,7 +8,8 @@ export class HomePage {
   readonly imgAvatarButton: Locator;
   readonly dashboardLink: Locator;
   readonly loginLink: Locator;
-
+  readonly HCMbutton: Locator;//nut chọn cac phong HCM
+  readonly heartbutton: Locator; //nút tim
   constructor(page: Page) {
     this.page = page;
     // this.nonImgAvatarButton = page.locator(
@@ -20,6 +21,8 @@ export class HomePage {
     this.imgAvatarButton = page.locator("#user-menu-button");
     this.dashboardLink = page.locator("text=Dashboard");
     this.loginLink = page.locator("text=Đăng nhập");
+    this.HCMbutton =  page.locator(".ant-card-body").first();
+    this.heartbutton = page.locator(".absolute.top-3.right-3.z-30").first();
   }
 
   async goto() {
