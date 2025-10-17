@@ -2,20 +2,14 @@ import { Page, Locator, expect } from "@playwright/test";
 import { LoginPage } from "./LoginPage";
 import { DashboardPage } from "./DashboardPage";
 import { BASE_URL } from "../utils/utils";
-import { RegisterPage } from "./RegisterPage";
 export class HomePage {
   readonly page: Page;
   readonly nonImgAvatarButton: Locator;
   readonly imgAvatarButton: Locator;
   readonly dashboardLink: Locator;
   readonly loginLink: Locator;
-<<<<<<< HEAD
   readonly HCMbutton: Locator;//nut chọn cac phong HCM
   readonly heartbutton: Locator; //nút tim
-=======
-  readonly registerLink: Locator;
-
->>>>>>> upstream/main
   constructor(page: Page) {
     this.page = page;
     // this.nonImgAvatarButton = page.locator(
@@ -27,17 +21,12 @@ export class HomePage {
     this.imgAvatarButton = page.locator("#user-menu-button");
     this.dashboardLink = page.locator("text=Dashboard");
     this.loginLink = page.locator("text=Đăng nhập");
-<<<<<<< HEAD
     this.HCMbutton =  page.locator(".ant-card-body").first();
     this.heartbutton = page.locator(".absolute.top-3.right-3.z-30").first();
-=======
-    this.registerLink = page.locator("text=Đăng ký");
->>>>>>> upstream/main
   }
 
   async goto() {
     await this.page.goto(BASE_URL || "");
-    await this.page.waitForLoadState('networkidle');
   }
 
   async openLoginPopup(): Promise<LoginPage> {
@@ -51,12 +40,5 @@ export class HomePage {
     await this.imgAvatarButton.click(); // mở dropdown
     await this.dashboardLink.click();
     return new DashboardPage(this.page);
-  }
-  async openRegister(): Promise<RegisterPage>{
-    await expect(this.nonImgAvatarButton).toBeVisible();
-    await this.nonImgAvatarButton.click();
-    await expect(this.registerLink).toBeVisible();
-    await this.registerLink.click();
-    return new RegisterPage(this.page);
   }
 }
