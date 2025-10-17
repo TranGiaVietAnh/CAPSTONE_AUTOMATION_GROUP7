@@ -3,6 +3,7 @@ import { LoginPage } from "../pages/LoginPage";
 import { ListRoomPage } from "../pages/ListRoomPage";
 import { HomePage } from "../pages/HomePage";
 import { DashboardPage } from "../pages/DashboardPage";
+// update test by Nguyet
 
 test.describe("Test function admin", () => {
   let loginPage: LoginPage;
