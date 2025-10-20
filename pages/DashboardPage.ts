@@ -37,6 +37,7 @@ export class DashboardPage {
   readonly clearGender: Locator; //nút clear thông in ô gender
   readonly clearDOB: Locator;
   readonly successUpdateInfoMess: Locator; //thông báo update thông tin thành công
+  readonly favoriteRoom: Locator; //text phòng yêu thich
   constructor(page: Page) {
     this.page = page;
     this.title = page.locator("p.smm\\:pt-10.font-bold.text-white"); // chỉnh locator theo thực tế
@@ -89,6 +90,9 @@ export class DashboardPage {
     this.clearDOB = page.locator("span.ant-picker-clear");
     this.successUpdateInfoMess = page.locator(
       "text=Cập nhật thông tin thành công"
+    );
+    this.favoriteRoom =  page.locator(
+      "text= Phòng Yêu Thích"
     );
   }
   //kiểm tra xem đẫ vào dashboard chưa
